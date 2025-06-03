@@ -8,4 +8,32 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
 })
-export class VerticalNavbarComponent {}
+export class VerticalNavbarComponent {
+  items = [
+    {
+      path: '',
+      label: 'Accueil',
+      icon: 'home',
+    },
+    {
+      path: 'resume',
+      label: 'CV',
+      icon: 'home',
+    },
+    {
+      path: 'projects',
+      label: 'Projets',
+      icon: 'projects',
+    },
+    {
+      path: 'skills',
+      label: 'Compétences',
+      icon: 'home',
+    },
+    {
+      path: 'contact',
+      label: 'Contact',
+      icon: 'home',
+    },
+  ];
+}

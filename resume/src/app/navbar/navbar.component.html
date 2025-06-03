@@ -1,46 +1,19 @@
-<nav class="sticky top-4 z-50 w-full flex justify-center pt-4">
-  <div class="bg-gray-950 text-white shadow-lg rounded-full px-6 py-2">
+<!-- Remove top padding and make navbar absolutely at the top with no margin -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-center">
+  <div class="bg-gray-950 text-white shadow-lg rounded-full px-6 py-2 mt-2">
     <ul class="flex justify-center items-center gap-6 text-sm">
+      @for (items of items;track $index) {
       <li>
         <a
-          routerLink=""
-          class="flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-gray-700 hover:cursor-pointer transition duration-200"
+          [routerLink]="items.path"
+          class="flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-gray-700 cursor-pointer transition duration-200"
         >
-          🏠 <span>Accueil</span>
+          <!-- <span class="text-lg">{{ items.icon }}</span> -->
+          <span>{{ items.label }}</span>
         </a>
       </li>
-      <li>
-        <a
-          routerLink="resume"
-          class="flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-gray-700 hover:cursor-pointer transition duration-200"
-        >
-          📄 <span>CV</span>
-        </a>
-      </li>
-      <li>
-        <a
-          routerLink="projects"
-          class="flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-gray-700 hover:cursor-pointer transition duration-200"
-        >
-          💼 <span>Projets</span>
-        </a>
-      </li>
-      <li>
-        <a
-          routerLink="skills"
-          class="flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-gray-700 hover:cursor-pointer transition duration-200"
-        >
-          🧠 <span>Compétences</span>
-        </a>
-      </li>
-      <li>
-        <a
-          routerLink="contact"
-          class="flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-gray-700 hover:cursor-pointer transition duration-200"
-        >
-          📬 <span>Contact</span>
-        </a>
-      </li>
+
+      }
     </ul>
   </div>
 </nav>
