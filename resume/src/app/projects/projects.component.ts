@@ -1,54 +1,51 @@
 import { Component } from '@angular/core';
+import { ProjectListComponent } from '../project-list/project-list.component';
+import { url } from 'inspector';
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  imports: [ProjectListComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
 })
 export class ProjectsComponent {
-  // Exemple dans projects.component.ts
-  projects = [
+  professionnalProjects = [
     {
-      title: 'Application de Gestion de Tâches',
-      description:
-        'Application Angular + Node.js pour organiser vos tâches au quotidien.',
-      image: 'assets/images/projet1.jpg',
-      //link: 'https://github.com/votre-utilisateur/projet1',
+      title: `App mobile de demande d'intérimaire`,
+      tag: 'PRO',
+      description: `Application mobile angular permettant de faire des demandes d'intérimaires pour les chantiers, avec gestion notifications.`,
+      technologies: ['MOA', 'MAQUETTES', 'GESTION DE PROJET'],
+      url: 'https://www.pilott.fr/nos-solutions/pilott/nouveaute-application-mobile-pilott',
     },
+    // {
+    //   title: 'Analyse SIRENE',
+    //   description: `Console app qui télécharge et indexe les données INSEE pour explorer les entreprises françaises.`,
+    //   technologies: ['C#', 'API SIRENE', 'Open data'],
+    // },
+    // {
+    //   title: 'Plateforme de demande mobile',
+    //   description: `Prototype d'app mobile web PWA pour chefs de chantier, avec stockage offline et synchronisation.`,
+    //   technologies: ['Angular', 'PWA', 'Mobile web'],
+    // },
+  ];
+
+  schoolProjects = [
+    // {
+    //   title: 'Analyse SIRENE',
+    //   description: `Console app qui télécharge et indexe les données INSEE pour explorer les entreprises françaises.`,
+    //   technologies: ['C#', 'API SIRENE', 'Open data'],
+    // },
+    // {
+    //   title: 'Plateforme de demande mobile',
+    //   description: `Prototype d'app mobile web PWA pour chefs de chantier, avec stockage offline et synchronisation.`,
+    //   technologies: ['Angular', 'PWA', 'Mobile web'],
+    // },
     {
-      title: 'Plateforme de Blog',
-      description:
-        'Blog moderne basé sur React et Express avec commentaires et likes.',
-      image: 'assets/images/projet2.jpg',
-      // link: 'https://github.com/votre-utilisateur/projet2',
-    },
-    {
-      title: 'Site E-commerce',
-      description: 'Boutique en ligne développée avec Vue.js et Django.',
-      image: 'assets/images/projet3.jpg',
-      // link: 'https://github.com/votre-utilisateur/projet3',
-    },
-    {
-      title: 'Application de Chat',
-      description:
-        'Application de messagerie instantanée en Socket.io et Node.js.',
-      image: 'assets/images/projet4.jpg',
-      // link: 'https://github.com/votre-utilisateur/projet4',
-    },
-    {
-      title: 'Dashboard RH',
-      description:
-        'Dashboard interactif pour la gestion d’intérimaires avec Angular & Tailwind.',
-      image: 'assets/images/projet5.jpg',
-      // link: 'https://github.com/votre-utilisateur/projet5',
-    },
-    {
-      title: 'Appli Mobile Offline',
-      description:
-        'Prototype d’appli mobile responsive fonctionnant sans connexion.',
-      image: 'assets/images/projet6.jpg',
-      // link: 'https://github.com/votre-utilisateur/projet6',
+      title: 'YouStats',
+      tag: 'WEB APP',
+      description: `Application d'affichage des statistiques de vidéo YouTube, avec recherche et filtres`,
+      technologies: ['python', 'PHP'],
+      url: 'https://github.com/Kawow2/YouStats',
     },
   ];
 }

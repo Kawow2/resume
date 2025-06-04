@@ -1,0 +1,33 @@
+<div class="flex justify-between items-center mb-6"></div>
+<h2 class="text-2xl font-semibold mb-6">{{ title }}</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  @for (project of projects; track project.title) {
+
+  <div
+    class="bg-[#111] border border-[#222] rounded-xl p-5 hover:shadow-lg transition hover:bg-[#222] hover:cursor-pointer"
+    (click)="goTo(project.url)"
+  >
+    <div class="flex justify-between items-center mb-2">
+      <h3 class="text-lg font-semibold">{{ project.title }}</h3>
+      @if (project.tag) {
+      <span
+        class="text-xs text-orange-500 bg-orange-900 px-2 py-0.5 rounded-full"
+      >
+        {{ project.tag }}
+      </span>
+      }
+    </div>
+    <p class="text-sm text-gray-400 mb-4">
+      {{ project.description }}
+    </p>
+    <div class="flex gap-2 flex-wrap text-xs">
+      @for (tech of project.technologies; track tech){
+      <span class="bg-gray-800 text-gray-300 px-2 py-0.5 rounded-full">
+        {{ tech }}
+      </span>
+      }
+    </div>
+  </div>
+  }
+</div>

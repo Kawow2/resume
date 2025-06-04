@@ -17,7 +17,7 @@ export class VerticalNavbarComponent {
     },
     {
       path: 'resume',
-      label: 'CV',
+      label: 'Parcours',
       icon: 'home',
     },
     {

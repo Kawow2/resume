@@ -1,42 +1,28 @@
-<div class="min-h-screen bg-gray-950 text-white px-4 py-12">
+<div class="min-h-screen bg-gray-900 text-white px-6 py-20">
   <div class="max-w-6xl mx-auto">
-    <header class="text-center mb-16">
-      <h1
-        class="text-5xl font-extrabold mb-4 text-gradient bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-      >
-        Mes Projets
-      </h1>
-      <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-        Découvrez une sélection de projets sur lesquels j'ai travaillé, mêlant
-        développement front-end et back-end avec des technologies modernes.
+    <header class="mb-16 flex flex-col items-center justify-center">
+      <h1 class="text-4xl font-bold mb-4">Mes projets</h1>
+      <p class="text-lg text-gray-400 max-w-2xl">
+        Voici une sélection de mes projets scolaires et personnels, réalisés
+        lors de mon cursus ingénieur au sein de Polytech Lyon.
       </p>
+      <a
+        href="https://github.com/ton-github"
+        target="_blank"
+        class="text-sm text-gray-400 hover:underline text-right"
+      >
+        Voir plus sur GitHub
+      </a>
     </header>
 
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      <!-- Projet -->
-      @for (projet of projects; track $index) {
+    <app-project-list
+      [projects]="professionnalProjects"
+      [title]="'Projets professionnels'"
+    ></app-project-list>
 
-      <div
-        class="group relative bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300"
-      >
-        <img
-          [src]="projet.image"
-          [alt]="projet.title"
-          class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        <div class="p-5 space-y-3">
-          <h2 class="text-xl font-bold text-white">{{ projet.title }}</h2>
-          <p class="text-gray-400 text-sm">{{ projet.description }}</p>
-          <!-- <a
-            [href]="projet.link"
-            target="_blank"
-            class="inline-block mt-2 text-indigo-400 hover:text-indigo-300 transition"
-          >
-            Voir sur GitHub →
-          </a> -->
-        </div>
-      </div>
-      }
-    </div>
+    <app-project-list
+      [projects]="schoolProjects"
+      [title]="'Projets scolaires'"
+    ></app-project-list>
   </div>
 </div>
